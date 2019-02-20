@@ -1,68 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Medium Highlight Menu Example</title>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="./assest/SelectMenu.css">
-<style>
-body {
-  background-color: #fafafa;
-}
-.container {
-  font-family: 'Open Sans', Sans;
-  font-weight: 100;
-  font-size: 18px;
-  color: #484850;
-  background: #fafafa;
-  width: 50%;
-  padding: 50px;
-  margin: 120px auto;
-}
-</style>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Medium Highlight Menu Example</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      href="http://www.jqueryscript.net/css/jquerysctipttop.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./assest/SelectMenu.css" />
+    <style>
+      body {
+        background-color: #fafafa;
+      }
+      .container {
+        font-family: "Open Sans", Sans;
+        font-weight: 100;
+        font-size: 18px;
+        color: #484850;
+        background: #fafafa;
+        width: 50%;
+        padding: 50px;
+        margin: 120px auto;
+      }
+    </style>
+  </head>
 
-<body>
-<div class="container">
-	    <h2>Highlight Menu Example</h2>
-	    <p>
-	      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta saepe error omnis, adipisci veritatis perspiciatis doloribus quidem maxime fugiat neque inventore, corrupti explicabo voluptatibus consequatur odio quam nesciunt impedit blanditiis.
+  <body>
+    <div class="container">
+      <h2>Highlight Menu Example</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta saepe
+        error omnis, adipisci veritatis perspiciatis doloribus quidem maxime
+        fugiat neque inventore, corrupti explicabo voluptatibus consequatur odio
+        quam nesciunt impedit blanditiis.
       </p>
       <p>
         this is the second paragraph. what will the anchor chante?
       </p>
-</div>
-
-	<div id="highlight_menu" style="display:none;"> 
-	  <ul class="social-share">
-	    <li><i class="fa fa-twitter fa-2x"></i></li>
-	    <li><i class="fa fa-facebook fa-2x"></i></li>
-	    <li><i class="fa fa-google-plus fa-2x"></i></li>
-        <li><i class="fa fa-edit fa-2x"></i></li>
-	  </ul>
-	  
-	  <div class="caret">
     </div>
-    
-  </div>
+
+    <div id="highlight_menu" style="display:none;">
+      <ul class="social-share">
+        <li><i class="fa fa-twitter fa-2x"></i></li>
+        <li><i class="fa fa-facebook fa-2x"></i></li>
+        <li><i class="fa fa-google-plus fa-2x"></i></li>
+        <li><i class="fa fa-edit fa-2x"></i></li>
+      </ul>
+
+      <div class="caret"></div>
+    </div>
 
     <script src="http://code.jquery.com/jquery-1.12.2.min.js"></script>
     <script src="./SelectMenu.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-36251023-1"]);
+      _gaq.push(["_setDomainName", "jqueryscript.net"]);
+      _gaq.push(["_trackPageview"]);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</body>
+      (function() {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

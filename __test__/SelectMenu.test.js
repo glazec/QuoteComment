@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 test("Select text do display the menu", async function() {
   const browser = await puppeteer.launch({
     headless: true,
-    slowMo: 80,
+    // slowMo: 80,
     args: ["--window-size=1920,1080"]
   });
   const page = await browser.newPage();
@@ -25,7 +25,7 @@ test("Select text do display the menu", async function() {
   //press the mouse again to disable the menu
   await page.mouse.up();
   await page.mouse.down();
-  await page.waitFor(300);
+  await page.waitFor(800);
   const disappear = await page.$eval("#highlight_menu", menu =>
     getComputedStyle(menu).getPropertyValue("display")
   );

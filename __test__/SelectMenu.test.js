@@ -32,3 +32,17 @@ test("Select text do display the menu", async function() {
   expect(disappear).toBe("none");
   await browser.close();
 }, 10000);
+
+// test("Display the select menu",async function(){
+//   document.body.innerHTML=
+//   ' <div id="highlight_menu" style="display:none;">'+
+// '</div>'+
+// '<p id="textForTest">'+
+// "test occupy test short"+
+// '</p>'
+// const $ = require('jquery')
+// require("../src/SelectMenu")
+// const sum = require("../src/sum")
+// $('#textForTest').mouseup()
+// expect(sum).toBeCalled();
+// })

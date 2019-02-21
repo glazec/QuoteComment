@@ -1,5 +1,7 @@
 # Quote Comment README
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2d928512ab664a16b5fb9ee48c9aed80)](https://app.codacy.com/app/luyiping1011/QuoteComment?utm_source=github.com&utm_medium=referral&utm_content=glazec/QuoteComment&utm_campaign=Badge_Grade_Dashboard)
+
 This is the README for your extension "hexo-post-head-generator". After writing up a brief description, we recommend including the following sections.
 
 ## Features

@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-with-codacy": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --token='e794b901d38d41ef87717119200a38af'",
+    "test-with-codecov": "jest --coverage && codecov --token=\"b72804ab-2fe0-428b-9d83-136f600be681\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "codacy-coverage": "^3.4.0",
     "codecov": "^3.2.0",
     "jest": "^24.1.0",
     "puppeteer": "^1.12.2"

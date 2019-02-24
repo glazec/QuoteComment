@@ -40,7 +40,7 @@ test("Hide function", async function() {
   const hide = require("../src/SelectMenu");
   const $ = require("jquery");
   document.body.innerHTML =
-    ' <div id="highlight_menu" class="highlight_menu_animate" style="display:none;">' +
+    "<div id='highlight_menu' class='highlight_menu_animate' style='display:none;'>" +
     "</div>";
   await hide();
   await sleep(500);

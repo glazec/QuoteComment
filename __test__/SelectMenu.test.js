@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-test.skip("UI test:Select text do display the menu", async function() {
+test("UI test:Select text do display the menu", async function() {
   const browser = await puppeteer.launch({
     headless: true,
     // slowMo: 80,
@@ -24,32 +24,48 @@ test.skip("UI test:Select text do display the menu", async function() {
   );
   expect(display).toBe("block");
   //the menu should disappear. when the user click mouse again with nothing selected.
-  await page.mouse.up();
-  await page.mouse.down();
+  await page.waitFor(80);
+  await page.mouse.click(450, 300);
   // there is a delay in animation
   await page.waitFor(800);
   const disappear = await page.$eval("#highlight_menu", (menu) =>
     getComputedStyle(menu).getPropertyValue("display")
   );
   expect(disappear).toBe("none");
+  //if select nothing, just double click, the menu will not occur
   await browser.close();
 }, 10000);
 
-test("Display the select menu", async function() {
-  jest.mock("../src/sum.js");
-  const sum = require("../src/sum");
-  sum.mockImplementation((cb) => {
-    cb(1, 2);
-  });
-  document.body.innerHTML =
-    ' <div id="highlight_menu" style="display:none;">' +
-    "</div>" +
-    '<p id="textForTest">' +
-    "test occupy test short" +
-    "</p>";
+test("Hide function", async function() {
+  const hide = require("../src/SelectMenu");
   const $ = require("jquery");
-  require("../src/SelectMenu");
-  $("#textForTest").mousedown();
-  $("#textForTest").mouseup();
-  expect(sum).toBeCalled();
+  document.body.innerHTML =
+    ' <div id="highlight_menu" class="highlight_menu_animate" style="display:none;">' +
+    "</div>";
+  await hide();
+  await sleep(500);
+  expect($("#highlight_menu").hasClass("highlight_menu_animate")).toBe(false);
 });
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// test("Display the select menu", async function() {
+//   jest.mock("../src/sum.js");
+//   const sum = require("../src/sum");
+//   sum.mockImplementation((cb) => {
+//     cb(1, 2);
+//   });
+//   document.body.innerHTML =
+//     ' <div id="highlight_menu" style="display:none;">' +
+//     "</div>" +
+//     '<p id="textForTest">' +
+//     "test occupy test short" +
+//     "</p>";
+//   const $ = require("jquery");
+//   require("../src/SelectMenu");
+//   $("#textForTest").mousedown();
+//   $("#textForTest").mouseup();
+//   expect(sum).toBeCalled();
+// });

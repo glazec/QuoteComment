@@ -51,3 +51,5 @@ function hide() {
     menu.hide().removeClass("highlight_menu_animate");
   });
 }
+
+module.exports=hide

@@ -1,5 +1,15 @@
 // var pSelectText = "";
 const $ = require("jquery");
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function hide() {
+  var menu = $("#highlight_menu");
+  menu.animate({ opacity: 0 }, function() {
+    menu.hide().removeClass("highlight_menu_animate");
+  });
+}
 $(function() {
   var menu = $("#highlight_menu");
   $(document.body).on("click", async function(evt) {
@@ -8,8 +18,8 @@ $(function() {
     var s = document.getSelection();
     if (s.toString()) {
       const r = s.getRangeAt(0);
-      if (r&&s.toString().trim()) {
-        console.log(s.toString())
+      if (r && s.toString().trim()) {
+        console.log(s.toString());
         // pSelectText = s.toString();
         var p = r.getBoundingClientRect();
         console.debug(p);
@@ -41,15 +51,4 @@ $(function() {
   });
 });
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function hide() {
-  var menu = $("#highlight_menu");
-  menu.animate({ opacity: 0 }, function() {
-    menu.hide().removeClass("highlight_menu_animate");
-  });
-}
-
-module.exports=hide
+module.exports = hide;

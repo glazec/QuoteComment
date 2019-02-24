@@ -1,5 +1,7 @@
 const puppeteer = require("puppeteer");
-
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 test("UI test:Select text do display the menu", async function() {
   const browser = await puppeteer.launch({
     headless: true,
@@ -47,9 +49,7 @@ test("Hide function", async function() {
   expect($("#highlight_menu").hasClass("highlight_menu_animate")).toBe(false);
 });
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+
 
 // test("Display the select menu", async function() {
 //   jest.mock("../src/sum.js");

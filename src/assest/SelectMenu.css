@@ -44,7 +44,7 @@ label {
 }
 
 .highlight_menu_animate {
-  transition: top 75ms ease-out, left 75ms ease-out;
+  transition: top 75ms ease-in, left 75ms ease-in;
 }
 
 .social-share {

@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "test-with-codacy": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --token='e794b901d38d41ef87717119200a38af'",
-    "test-with-codecov": "jest --coverage && codecov --token=\"b72804ab-2fe0-428b-9d83-136f600be681\""
+    "test-with-codacy": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage --token='e794b901d38d41ef87717119200a38af'",
+    "test-with-codecov": "jest --coverage && npx codecov --token=\"b72804ab-2fe0-428b-9d83-136f600be681\"",
+    "build":"webpack"
   },
   "author": "",
   "license": "ISC",
